@@ -1,6 +1,7 @@
 const messagesList = document.getElementById("messages-list");
 const form = document.getElementById("message-form");
 const input = document.getElementById("message-input");
+const usernameInput = document.getElementById("username-input");
 
 const BACKEND_URL = "http://127.0.0.1:3000";
 
@@ -11,7 +12,7 @@ async function loadMessages() {
   messagesList.innerHTML = "";
   messages.forEach((msg) => {
     const li = document.createElement("li");
-    li.textContent = `${msg.username}: ${msg.text}`;
+    li.textContent = `${msg.username} (${msg.timeStamp}): ${msg.text}`;
     messagesList.appendChild(li);
   });
 }
@@ -21,8 +22,9 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const newMessage = {
-    username: "User",
+    username: usernameInput.value,
     text: input.value,
+    timeStamp: new Date().toLocaleTimeString(),
   };
 
   await fetch(`${BACKEND_URL}/messages`, {
@@ -34,5 +36,6 @@ form.addEventListener("submit", async (e) => {
   });
 
   input.value = "";
+  usernameInput.value = "";
   loadMessages();
 });
