@@ -7,11 +7,16 @@
     <title>Chat App</title>
   </head>
   <body>
-    <form action="">
-      <input type="text" id="messageInput" placeholder="Type a message..." />
+    <ul id="messages-list"></ul>
+    <form id="message-form">
+      <input
+        type="text"
+        id="message-input"
+        placeholder="Type a message..."
+        required
+      />
       <button type="submit">Send</button>
     </form>
-    <ul id="message-list"></ul>
 
     <script src="script.js"></script>
   </body>
