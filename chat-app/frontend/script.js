@@ -12,7 +12,12 @@ async function loadMessages() {
   messagesList.innerHTML = "";
   messages.forEach((msg) => {
     const li = document.createElement("li");
-    li.textContent = `${msg.username} (${msg.timeStamp}): ${msg.text}`;
+    li.innerHTML = `
+    <div class="message-header">
+      <span class="username"> <strong>${msg.username}</strong></span>
+      <span class="timestamp">${msg.timeStamp}</span>
+      </div>
+      <div class="message-text">${msg.text}</div>`;
     messagesList.appendChild(li);
   });
 }
@@ -24,7 +29,11 @@ form.addEventListener("submit", async (e) => {
   const newMessage = {
     username: usernameInput.value,
     text: input.value,
-    timeStamp: new Date().toLocaleTimeString(),
+    timeStamp: new Date().toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    }),
   };
 
   await fetch(`${BACKEND_URL}/messages`, {
