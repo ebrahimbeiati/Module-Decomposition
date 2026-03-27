@@ -3,7 +3,8 @@ const form = document.getElementById("message-form");
 const input = document.getElementById("message-input");
 const usernameInput = document.getElementById("username-input");
 
-const BACKEND_URL = "http://127.0.0.1:3000";
+const BACKEND_URL =
+  "https://xwc7hmpmk5kvt9ktptcvuuke.hosting.codeyourfuture.io";
 
 // Fetch and display messages
 async function loadMessages() {
