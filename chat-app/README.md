@@ -1,34 +1,49 @@
-# Write and Deploy Chat Application Frontend and Backend
+# [Chat App](https://uretqju43s9008b1nyjk586m.hosting.codeyourfuture.io)
 
-### Link to the coursework
+A full-stack chat application built with:
 
-https://sdc.codeyourfuture.io/decomposition/sprints/2/prep/
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
 
-You must complete and deploy a chat application. You have two weeks to complete this.
+Users can send messages, see existing messages, and view updates from others.
 
-It must support at least the following requirements:
-* As a user, I can send add a message to the chat.
-* As a user, when I open the chat I see the messages that have been sent by any user.
-* As a user, when someone sends a message, it gets added to what I see.
+## Project Structure
 
-It must also support at least one additional feature.
+```text
+chat-app/
+	backend/
+		package.json
+		server.js
+	frontend/
+		index.html
+		script.js
+		styles.css
+```
 
-### Why are we doing this?
+## Run Locally
 
-Learning about deploying multiple pieces of software that interact.
+### 1. Start the backend
 
-Designing and implementing working software that users can use.
+From the backend folder, install dependencies and run the server:
 
-Exploring and understanding different ways of sending information between a client and server.
+```bash
+cd chat-app/backend
+npm install
+node server.js
+```
 
-### Maximum time in hours
+Backend runs on http://localhost:3000
 
-16
+### 2. Start the frontend
 
-### How to submit
+Open chat-app/frontend/index.html in your browser.
 
-* Fork the Module-Decomposition repository
-* Develop and deploy your chat app
-* Create a pull request back into the original Module-Decomposition repo, including:
-    * A link to the deployed frontend on the CYF hosting environment
-    * A link to the deployed backend on the CYF hosting environment
+If you want to use local backend instead of deployed backend, set BACKEND_URL in script.js to:
+
+http://127.0.0.1:3000
+
+## Learning Goals
+
+- Build a frontend and backend that communicate using HTTP
+- Practice working with JSON data
+- Understand simple full-stack deployment flow
