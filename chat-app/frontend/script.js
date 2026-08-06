@@ -5,7 +5,7 @@ const input = document.getElementById("message-input");
 const usernameInput = document.getElementById("username-input");
 
 const BACKEND_URL =
-  "https://xwc7hmpmk5kvt9ktptcvuuke.hosting.codeyourfuture.io";
+  "https://h1mxhiv9k4q0px4jq6tmtush.grads.hosting.cyf.academy";
 
 // Fetch and display messages
 async function loadMessages() {
