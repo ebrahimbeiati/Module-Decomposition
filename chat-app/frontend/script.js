@@ -5,13 +5,11 @@ const input = document.getElementById("message-input");
 const usernameInput = document.getElementById("username-input");
 
 const BACKEND_URL =
-  "https://h1mxhiv9k4q0px4jq6tmtush.grads.hosting.cyf.academy";
+  "https://h1mxhiv9k4q0px4jq6tmtush.grads.hosting.cyf.academy/";
 
 // Fetch and display messages
 async function loadMessages() {
-  const response = await fetch(
-    `${"https://h1mxhiv9k4q0px4jq6tmtush.grads.hosting.cyf.academy"}/messages`,
-  );
+  const response = await fetch(`${BACKEND_URL}/messages`);
   const messages = await response.json();
   messagesList.innerHTML = "";
 
