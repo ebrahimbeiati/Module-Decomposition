@@ -9,7 +9,9 @@ const BACKEND_URL =
 
 // Fetch and display messages
 async function loadMessages() {
-  const response = await fetch(`${BACKEND_URL}/messages`);
+  const response = await fetch(
+    `${"https://h1mxhiv9k4q0px4jq6tmtush.grads.hosting.cyf.academy"}/messages`,
+  );
   const messages = await response.json();
   messagesList.innerHTML = "";
 
