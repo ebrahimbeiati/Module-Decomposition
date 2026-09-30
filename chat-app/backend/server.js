@@ -11,10 +11,6 @@ let messages = [];
 app.get("/messages", (req, res) => {
   res.json(messages);
 });
-
-app.get("/messages", (req, res) => {
-  res.json(messages);
-});
 app.post("/messages", (req, res) => {
   const message = req.body;
   messages.push(message);
