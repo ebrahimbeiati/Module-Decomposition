@@ -14,18 +14,24 @@
         type="text"
         id="username-input"
         placeholder="Your name..."
+        aria-label="Your name"
         required
       />
-      <input
-        type="text"
-        id="message-input"
-        placeholder="Type a message..."
-        required
-      />
-      <button type="submit">Send</button>
+      <div class="chat-footer">
+        <div class="input-wrapper">
+          <!-- The Popover Picker Container -->
+          <div id="picker-container" class="picker-hidden"></div>
+          <!-- Text Input -->
+          <input type="text" id="chat-input" placeholder="Message" aria-label="Message" autocomplete="off" required>
+          <!-- Trigger Button -->
+          <button id="emoji-btn" type="button">😀</button>
+        </div>
+      
+        <button id="send-btn" type="submit">Send</button>
+      </div>
     </form>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

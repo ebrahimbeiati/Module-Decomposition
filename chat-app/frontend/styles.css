@@ -20,6 +20,8 @@ body {
   list-style: none;
   margin: 0;
   padding: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 #messages-list li {
@@ -29,6 +31,11 @@ body {
   border-radius: 10px;
   max-width: 80%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#messages-list li:nth-child(even) {
+  align-self: flex-end;
+  background: #d9ebff;
 }
 
 .message-header {
@@ -61,11 +68,18 @@ body {
 
 form {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   padding: 15px;
   background: #fff;
   border-top: 1px solid #ddd;
 }
+
+form > input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 form input {
   flex: 1;
   min-width: 0; /* IMPORTANT: prevents overflow */
@@ -81,7 +95,7 @@ input {
 button {
   padding: 10px 15px;
   border: none;
-  background: #3981d3;
+  background: #245a96;
   color: white;
   border-radius: 6px;
   cursor: pointer;
@@ -89,4 +103,56 @@ button {
 
 button:hover {
   background: #005fcc;
+}
+.chat-footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: #f0f2f5;
+  box-sizing: border-box;
+}
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  background: white;
+  border-radius: 24px;
+  padding: 5px 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+#chat-input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#emoji-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 5px 0 0;
+}
+
+/* Picker Popover Position */
+#picker-container {
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  z-index: 1000;
+  max-width: calc(100vw - 30px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.picker-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
 }
